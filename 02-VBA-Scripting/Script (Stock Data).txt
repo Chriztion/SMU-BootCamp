@@ -1,0 +1,83 @@
+Sub stockdata():
+
+' Declare Variables
+For Each ws In Worksheets
+
+
+Dim tableRow As Integer
+    tableRow = 2
+
+Dim ticker As String
+
+Dim openPrice As Double
+    openPrice = 2
+
+Dim closePrice As Double
+
+Dim stockVolume As Double
+    stockVolume = 0
+
+Dim percentChange As Double
+
+Dim yearChange As Double
+
+' LastRow syntax
+    lastrow = Range("A" & Rows.Count).End(xlUp).Row
+    
+' Create Loop
+For i = 2 To lastrow
+    If Cells(i, 1).Value <> Cells(i + 1, 1).Value Then
+        
+        ticker = Cells(i, 1).Value
+        
+        yearChange = Cells(i, 6).Value - Cells(i + 1, 3).Value
+        
+        stockVolume = stockVolume + Cells(i, 7).Value
+        
+    If Cells(i + 1, 3).Value <> 0 Then
+        
+        percentChange = (yearChange / Cells(i + 1, 3).Value)
+    Else
+        percentChange = (yearChange / 0.000001)
+    End If
+        Range("J" & tableRow).Value = yearChange
+            
+        Range("I" & tableRow).Value = ticker
+            
+            
+        Range("L" & tableRow).Value = stockVolume
+            
+            
+        Range("K" & tableRow).Value = percentChange
+           Range("K" & tableRow).NumberFormat = "0.00%"
+    If Range("K" & tableRow).Value > 0 Then
+        Range("K" & tableRow).Interior.ColorIndex = 4
+    Else
+        Range("K" & tableRow).Interior.ColorIndex = 3
+    End If
+    
+        tableRow = tableRow + 1
+        
+        stockVolume = 0
+    Else
+        stockVolume = stockVolume + Cells(i, 7).Value
+    
+    End If
+        Next i
+    Next ws
+    
+        
+            
+    
+' Name Titles
+    Cells(1, 9).Value = "Ticker"
+    Cells(1, 10).Value = "Yearly Change"
+    Cells(1, 11).Value = "Percent Change"
+    Cells(1, 12).Value = "Total Stock Volume"
+    
+
+
+
+End Sub
+
+

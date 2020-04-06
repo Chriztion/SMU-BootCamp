@@ -1,0 +1,99 @@
+Sub stock_data():
+
+' Declare Variables.
+
+For Each ws In Worksheets
+Dim i As Long
+Dim stockVolume As Double
+Dim stockTicker As String
+Dim lastrow As Long
+Dim summary_table_index As Integer
+
+
+' Yearly Change and Percent Charge
+Dim yearChange As Double
+Dim percentCharged As Double
+
+
+Dim start As Integer
+    start = 2
+
+
+        ' Volume and Index
+        summary_table_index = 2
+
+        stockVolume = 0
+
+' Insert lastrow syntax
+
+lastrow = ws.Range("A" & Rows.Count).End(xlUp).Row
+
+' Loop the last row
+    For i = 2 To lastrow
+' Establish and check if Conditionals work.
+
+' IF index is NOT = to lastrow
+If i <> lastrow Then
+
+
+    If ws.Cells(i, 1).Value <> ws.Cells(i + 1, 1).Value Then
+    
+    
+    ' Ticker Establishment
+    stockTicker = ws.Cells(i, 1).Value
+    
+    
+    stockVolume = stockVolume + ws.Cells(i, 7).Value
+    yearChange = ws.Cells(i, 6) - ws.Cells(start, 3)
+    
+    ' Conditional Check
+        If ws.Cells(start, 3).Value <> 0 Then
+            percentCharge = (yearChange / ws.Cells(start, 3).Value)
+        Else
+        
+            percentCharge = (yearChange / 0.000001)
+    
+End If
+
+    ws.Range("I" & summary_table_index).Value = stockTicker
+    
+    
+    ws.Range("J" & summary_table_index).Value = yearChange
+    
+    ws.Range("L" & summary_table_index).Value = stockVolume
+    
+    ws.Range("K" & summary_table_index).Value = percentCharge
+        ws.Range("K" & summary_table_index).NumberFormat = "0.00%"
+    If ws.Range("K" & summary_table_index).Value > 0 Then
+        ws.Range("K" & summary_table_index).Interior.ColorIndex = 4
+    Else
+        ws.Range("K" & summary_table_index).Interior.ColorIndex = 3
+    End If
+        
+        
+
+    
+    ' Add to the row
+    summary_table_index = summary_table_index + 1
+    
+    ' Reset volume
+    stockVolume = 0
+start = Cells((i + 1), 3)
+
+
+    Else:
+    stockVolume = stockVolume + ws.Cells(i, 7).Value
+
+   
+        
+    
+End If
+    End If
+        Next i
+            Next ws
+
+
+
+
+End Sub
+
