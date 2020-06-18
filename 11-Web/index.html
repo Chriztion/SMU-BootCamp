@@ -1,0 +1,128 @@
+<!-- LANDING PAGE -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="https://bootswatch.com/4/lux/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <!-- Insert a header and a nav bar -->
+    <!-- Split summary and graph preview boxes -->
+    <div class="container-fluid pg-container">
+        <div>
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                <a class="navbar-brand" href="#">Weather</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarColor02">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="comparison.html">Comparison</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="comparison.html" role="button" aria-haspopup="true" aria-expanded="false">Graphs</a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="Plots/temperature.html">Temperature</a>
+                                <a class="dropdown-item" href="Plots/cloudiness.html">Cloudiness</a>
+                                <a class="dropdown-item" href="Plots/wind_speed.html">Windspeed</a>
+                                <a class="dropdown-item" href="Plots/humidity.html">Humidity</a>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="data.html">Data</a>
+
+                    </ul>
+
+                </div>
+            </nav>
+        </div>
+        <!-- Our columns function in rows. -->
+        <div class="row content-wrap">
+            <!-- Define as 7 columns since summary is focus of page -->
+            <div class="col-md-7">
+                <!-- Insert Card -->
+                <div class="card text-white bg-primary mb-3 cardformat" ;>
+                    <div class="card-header cardhead">Open Weather API</div>
+                    <div class="card-body cardhead">
+                        <h4 class="card-title ">Summary Analysis</h4>
+                        <p class="card-text ">
+                            This project sought to answer the question, "Does a city's location have any impact on its temperature, humidity, wind speed, and cloudiness?" Generally, there is little to no correlation between wind speed and latitude, humidity and latitiude, and cloudiness
+                            and latitiude. However, there is a strong, parabolic relationship between latitude of a city and temperature. <br> <br> </p>
+                        <h6 style=color:white>To learn more, click on the graphs to the right.</h6>
+                    </div>
+                </div>
+            </div>
+            <!-- Insert Card -->
+            <div class="col-md-5 ">
+                <div class="card bg-secondary mb-3 cardformat" ;>
+                    <div class="card-header">Open Weather API</div>
+                    <div class="card-body ">
+                        <h4 class="card-title ">Available Visualizations</h4>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="hovereffect">
+                                    <img src="Resources/assets/images/Fig1.png" alt="City Latitude vs Temperature" class="imgformat" height=175 width=225>
+                                    <div class="overlay">
+                                        <h2>Temp</h2>
+                                        <a class="info" href="Plots/temperature.html">Go to Graph</a>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="col-md-6">
+                                <div class="hovereffect">
+                                    <img src="Resources/assets/images/Fig2.png" alt="City Latitude vs Humidity" class="imgformat" height=175 width=225>
+                                    <div class="overlay">
+                                        <h2>Humidity</h2>
+                                        <a class="info" href="Plots/humidity.html">Go to Graph</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="hovereffect">
+                                    <img src="Resources/assets/images/Fig3.png" alt="City Latitude vs Cloudiness" class="imgformat" height=175 width=225>
+                                    <div class="overlay">
+                                        <h2>Cloudiness</h2>
+                                        <a class="info" href="Plots/cloudiness.html">Go to Graph</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="hovereffect">
+                                    <img src="Resources/assets/images/Fig4.png" alt="City Latitude vs Windspeed" class="imgformat" height=175 width=225>
+                                    <div class="overlay">
+                                        <h2>Windspeed</h2>
+                                        <a class="info" href="Plots/wind_speed.html">Go to Graph</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Add in a footer so people know what's up -->
+    <div class="alert alert-dismissible alert-warning footerformat">
+        <p class="mb-0">Christion™</p>
+    </div>
+</body>
+
+</html>
