@@ -26,6 +26,18 @@
     cursor: pointer;
 }
 
-navbar-nav mr-auto {
+.nav-link {
+    nav-right: auto;
+}
+
+.navbar-nav {
     text-align: right;
+}
+
+.h2 {
+    color: white;
+}
+
+body {
+    background-color: black;
 }

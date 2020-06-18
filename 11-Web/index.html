@@ -13,19 +13,20 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </head>
 
-<body>
+<body style="background-color: black;">
+
     <!-- Insert a header and a nav bar -->
     <!-- Split summary and graph preview boxes -->
     <div class="container-fluid pg-container">
         <div>
-            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <nav class="navbar navbar-expand-lg navbar-dark bg-black">
                 <a class="navbar-brand" href="#">Weather</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
                   <span class="navbar-toggler-icon"></span>
                 </button>
 
-                <div class="collapse navbar-collapse" id="navbarColor02">
-                    <ul class="navbar-nav mr-auto">
+                <div class="collapse navbar-collapse justify-content-end" id="navbarColor02">
+                    <ul class="navbar-nav">
                         <li class="nav-item active">
                             <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
                         </li>
@@ -54,7 +55,7 @@
             <!-- Define as 7 columns since summary is focus of page -->
             <div class="col-md-7">
                 <!-- Insert Card -->
-                <div class="card text-white bg-primary mb-3 cardformat" ;>
+                <div class="card text-white bg-primary mb-3 cardformat " ;>
                     <div class="card-header cardhead">Open Weather API</div>
                     <div class="card-body cardhead">
                         <h4 class="card-title ">Summary Analysis</h4>
@@ -67,7 +68,7 @@
             </div>
             <!-- Insert Card -->
             <div class="col-md-5 ">
-                <div class="card bg-secondary mb-3 cardformat" ;>
+                <div class="card bg-primary mb-3 cardformat" ;>
                     <div class="card-header">Open Weather API</div>
                     <div class="card-body ">
                         <h4 class="card-title ">Available Visualizations</h4>
@@ -76,8 +77,8 @@
                                 <div class="hovereffect">
                                     <img src="Resources/assets/images/Fig1.png" alt="City Latitude vs Temperature" class="imgformat" height=175 width=225>
                                     <div class="overlay">
-                                        <h2>Temp</h2>
-                                        <a class="info" href="Plots/temperature.html">Go to Graph</a>
+                                        <h2 style="color: white;">Temp</h2>
+                                        <a class="info" href="Plots/temperature.html" style="color: white;">Go to Graph</a>
                                     </div>
                                 </div>
 
@@ -86,8 +87,8 @@
                                 <div class="hovereffect">
                                     <img src="Resources/assets/images/Fig2.png" alt="City Latitude vs Humidity" class="imgformat" height=175 width=225>
                                     <div class="overlay">
-                                        <h2>Humidity</h2>
-                                        <a class="info" href="Plots/humidity.html">Go to Graph</a>
+                                        <h2 style="color: white;">Humidity</h2>
+                                        <a class="info" href="Plots/humidity.html" style="color: white;">Go to Graph</a>
                                     </div>
                                 </div>
                             </div>
@@ -97,8 +98,8 @@
                                 <div class="hovereffect">
                                     <img src="Resources/assets/images/Fig3.png" alt="City Latitude vs Cloudiness" class="imgformat" height=175 width=225>
                                     <div class="overlay">
-                                        <h2>Cloudiness</h2>
-                                        <a class="info" href="Plots/cloudiness.html">Go to Graph</a>
+                                        <h2 style="color: white;">Cloudiness</h2>
+                                        <a class="info" href="Plots/cloudiness.html" style="color: white;">Go to Graph</a>
                                     </div>
                                 </div>
                             </div>
@@ -106,8 +107,8 @@
                                 <div class="hovereffect">
                                     <img src="Resources/assets/images/Fig4.png" alt="City Latitude vs Windspeed" class="imgformat" height=175 width=225>
                                     <div class="overlay">
-                                        <h2>Windspeed</h2>
-                                        <a class="info" href="Plots/wind_speed.html">Go to Graph</a>
+                                        <h2 style="color: white;">Wind Speed</h2>
+                                        <a class="info" href="Plots/wind_speed.html" style="color: white;">Go to Graph</a>
                                     </div>
                                 </div>
                             </div>
